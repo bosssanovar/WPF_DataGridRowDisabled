@@ -38,7 +38,7 @@
                         </DataTrigger>
                         <DataTrigger  Binding="{Binding IsReadOnly.Value}" Value="True">
                             <Setter Property="IsEnabled" Value="False"/>
-                            <Setter Property="Background" Value="Gray"/>
+                            <Setter Property="Background" Value="LightSkyBlue"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
@@ -141,7 +141,7 @@
                                 </DataTrigger>
                                 <DataTrigger Binding="{Binding IsText2ReadOnly.Value}" Value="True">
                                     <Setter Property="IsEnabled" Value="False" />
-                                    <Setter Property="Background" Value="Gray"/>
+                                    <Setter Property="Background" Value="LightSkyBlue"/>
                                     <Setter Property="TextElement.Foreground" Value="Black"/>
                                     <Setter Property="TextElement.FontStyle" Value="Italic"/>
                                 </DataTrigger>
