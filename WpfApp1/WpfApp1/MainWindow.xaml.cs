@@ -18,11 +18,15 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
+        public ReactivePropertySlim<bool> IsRowEnabled { get; } = new(true);
+
         public ReactiveCollection<Detail> Details { get; } = [];
 
         public MainWindow()
         {
             InitDetails();
+
+            IsRowEnabled.Subscribe(x => Details[0].IsEnabled.Value = x);
 
             InitializeComponent();
         }
