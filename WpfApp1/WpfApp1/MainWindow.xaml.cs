@@ -33,6 +33,10 @@ namespace WpfApp1
 
             IsRowReadOnly.Subscribe(x => Details[9].IsReadOnly.Value = !x);
 
+            IsCellEnabled.Subscribe(x => Details[2].IsText1Enabled.Value = x);
+
+            IsCellReadOnly.Subscribe(x => Details[2].IsText2ReadOnly.Value = !x);
+
             InitializeComponent();
         }
 

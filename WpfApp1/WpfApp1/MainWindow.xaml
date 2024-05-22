@@ -87,6 +87,25 @@
                             <TextBlock Text="Text 1" />
                         </DataTemplate>
                     </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Style.Triggers>
+                                <DataTrigger  Binding="{Binding IsEnabled.Value}" Value="False">
+                                    <Setter Property="Background" Value="Gray"/>
+                                    <Setter Property="TextElement.Foreground" Value="DarkGray"/>
+                                </DataTrigger>
+                                <DataTrigger  Binding="{Binding IsReadOnly.Value}" Value="True">
+                                    <Setter Property="TextElement.Foreground" Value="Black"/>
+                                    <Setter Property="TextElement.FontStyle" Value="Italic"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsText1Enabled.Value}" Value="False">
+                                    <Setter Property="IsEnabled" Value="False" />
+                                    <Setter Property="Background" Value="Gray"/>
+                                    <Setter Property="TextElement.Foreground" Value="DarkGray"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGridTemplateColumn.CellStyle>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Text1.Value}" />
@@ -110,6 +129,25 @@
                             <TextBlock Text="Text 2" />
                         </DataTemplate>
                     </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Style.Triggers>
+                                <DataTrigger  Binding="{Binding IsEnabled.Value}" Value="False">
+                                    <Setter Property="TextElement.Foreground" Value="DarkGray"/>
+                                </DataTrigger>
+                                <DataTrigger  Binding="{Binding IsReadOnly.Value}" Value="True">
+                                    <Setter Property="TextElement.Foreground" Value="Black"/>
+                                    <Setter Property="TextElement.FontStyle" Value="Italic"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsText2ReadOnly.Value}" Value="True">
+                                    <Setter Property="IsEnabled" Value="False" />
+                                    <Setter Property="Background" Value="Gray"/>
+                                    <Setter Property="TextElement.Foreground" Value="Black"/>
+                                    <Setter Property="TextElement.FontStyle" Value="Italic"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGridTemplateColumn.CellStyle>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Text2.Value}" />

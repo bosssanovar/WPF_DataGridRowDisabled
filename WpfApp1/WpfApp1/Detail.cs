@@ -14,6 +14,10 @@ namespace WpfApp1
 
         public ReactivePropertySlim<bool> IsReadOnly { get; } = new(false);
 
+        public ReactivePropertySlim<bool> IsText1Enabled { get; } = new(true);
+
+        public ReactivePropertySlim<bool> IsText2ReadOnly { get; } = new(false);
+
         public ReactivePropertySlim<int> Number { get; } = new(1);
 
         public ReactivePropertySlim<string> Text1 { get; } = new(string.Empty);
