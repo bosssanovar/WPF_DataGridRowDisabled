@@ -19,6 +19,9 @@ namespace WpfApp1
     public partial class MainWindow : Window
     {
         public ReactivePropertySlim<bool> IsRowEnabled { get; } = new(true);
+        public ReactivePropertySlim<bool> IsRowReadOnly { get; } = new(true);
+        public ReactivePropertySlim<bool> IsCellEnabled { get; } = new(true);
+        public ReactivePropertySlim<bool> IsCellReadOnly { get; } = new(true);
 
         public ReactiveCollection<Detail> Details { get; } = [];
 
@@ -27,6 +30,8 @@ namespace WpfApp1
             InitDetails();
 
             IsRowEnabled.Subscribe(x => Details[0].IsEnabled.Value = x);
+
+            IsRowReadOnly.Subscribe(x => Details[9].IsReadOnly.Value = !x);
 
             InitializeComponent();
         }
